@@ -1,5 +1,5 @@
 # Set path
-setwd("E:/Academic S7/MA4014 - Linear Models and Multivariate Statistics/Repository/Linear-Models")
+setwd("E:/Academic S7/MA4014 - Linear Models and Multivariate Statistics/Linear-Models")
 current_path <- getwd()
 
 # Read data
@@ -11,6 +11,10 @@ print(paste('Correlation: ', correlation))
 
 # Regression model: Units as a function of Minutes
 model <- lm(Minutes ~ Units, data = data)
+
+# anova
+data.aov <- aov(model)
+summary(data.aov)
 
 # Plotting Units on x-axis and Minutes on y-axis
 plot(data$Units, data$Minutes,
